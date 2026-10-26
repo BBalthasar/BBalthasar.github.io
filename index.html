@@ -62,6 +62,11 @@
 
   /* ---------- Hero ---------- */
   header.hero { padding-top: 88px; padding-bottom: 56px; }
+  .headshot {
+    display: block; width: 168px; height: 168px; margin: 0 0 28px;
+    border-radius: 50%; object-fit: cover; border: 1px solid var(--rule);
+    background: var(--accent-soft);
+  }
   .hero h1 {
     font-size: clamp(2.6rem, 8vw, 4.4rem);
     line-height: 1.02;
@@ -127,6 +132,7 @@
 
   @media (max-width: 600px) {
     header.hero { padding-top: 56px; padding-bottom: 40px; }
+    .headshot { width: 160px; height: 160px; margin: 0 auto 24px; }
     .entry, dl.skills { grid-template-columns: 1fr; gap: 2px; }
     dl.skills dd { margin-bottom: 12px; }
     .when { padding-top: 0; }
@@ -136,6 +142,7 @@
 <body>
 
 <header class="hero wrap">
+  <img class="headshot" src="images/headshot.jpg" alt="Bennett Balthasar headshot" width="168" height="168">
   <h1>Bennett<br>Balthasar</h1>
   <p class="lede">I work where finance meets data: forecasting, reporting, and building the tools that make both faster. Currently finishing an MS in Business Analytics at the University of Georgia.</p>
   <p class="where">Athens &amp; Atlanta, Georgia</p>
