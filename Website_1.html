@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bennett Balthasar</title>
+<meta name="description" content="Bennett Balthasar — finance and business analytics. MSBA candidate at the University of Georgia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ EDIT COLORS HERE ============ */
+  :root {
+    --paper:  #F5F7F8;   /* page background */
+    --ink:    #17212B;   /* main text */
+    --muted:  #5A6672;   /* secondary text */
+    --rule:   #D8DEE3;   /* thin lines */
+    --accent: #1D6B57;   /* ledger green */
+    --accent-soft: #E3EFEB;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:  #12181E;
+      --ink:    #E8ECEF;
+      --muted:  #9AA6B1;
+      --rule:   #2A333C;
+      --accent: #5FC2A4;
+      --accent-soft: #1A2B28;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    font-feature-settings: "tnum" 1;
+  }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- Hero ---------- */
+  header.hero { padding-top: 88px; padding-bottom: 56px; }
+  .hero h1 {
+    font-size: clamp(2.6rem, 8vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+    margin: 0 0 22px;
+  }
+  .hero p.lede {
+    font-size: 1.22rem;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 34em;
+    margin: 0 0 18px;
+  }
+  .hero p.where { color: var(--muted); margin: 0 0 28px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px 22px; padding: 0; margin: 0; list-style: none; }
+  .links a { font-weight: 600; }
+
+  .trend { display: block; width: 100%; height: 70px; margin-top: 48px; }
+  .trend path.line {
+    fill: none; stroke: var(--accent); stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 1200; stroke-dashoffset: 1200;
+    animation: draw 2.2s cubic-bezier(.4,0,.2,1) .3s forwards;
+  }
+  .trend path.base { stroke: var(--rule); stroke-width: 1; }
+  .trend circle { fill: var(--accent); opacity: 0; animation: pop .3s ease 2.4s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes pop { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    .trend path.line { animation: none; stroke-dashoffset: 0; }
+    .trend circle { animation: none; opacity: 1; }
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 44px 0; border-top: 1px solid var(--rule); }
+  section h2 {
+    font-size: 1.05rem; font-weight: 600; color: var(--muted);
+    margin: 0 0 26px; letter-spacing: 0;
+  }
+
+  .entry { display: grid; grid-template-columns: 150px 1fr; gap: 6px 28px; margin-bottom: 34px; }
+  .entry:last-child { margin-bottom: 0; }
+  .when { color: var(--muted); font-size: 0.93rem; padding-top: 2px; }
+  .entry h3 { font-size: 1.12rem; font-weight: 600; margin: 0; line-height: 1.35; }
+  .entry .org { color: var(--muted); margin: 2px 0 10px; }
+  .entry ul { margin: 0; padding-left: 1.1em; }
+  .entry li { margin-bottom: 6px; }
+  .entry p { margin: 0; }
+  .tag {
+    display: inline-block; font-size: 0.8rem; font-weight: 600;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 1px 8px; border-radius: 4px; margin-left: 6px; vertical-align: 2px;
+  }
+
+  dl.skills { display: grid; grid-template-columns: 150px 1fr; gap: 10px 28px; margin: 0; }
+  dl.skills dt { color: var(--muted); font-size: 0.93rem; padding-top: 2px; }
+  dl.skills dd { margin: 0; }
+
+  .contact p { margin: 0 0 16px; max-width: 34em; }
+
+  footer { padding-top: 36px; padding-bottom: 56px; color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--rule); }
+
+  @media (max-width: 600px) {
+    header.hero { padding-top: 56px; padding-bottom: 40px; }
+    .entry, dl.skills { grid-template-columns: 1fr; gap: 2px; }
+    dl.skills dd { margin-bottom: 12px; }
+    .when { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <h1>Bennett<br>Balthasar</h1>
+  <p class="lede">I work where finance meets data: forecasting, reporting, and building the tools that make both faster. Currently finishing an MS in Business Analytics at the University of Georgia.</p>
+  <p class="where">Athens &amp; Atlanta, Georgia</p>
+  <ul class="links">
+    <!-- EDIT: replace with your real links -->
+    <li><a href="mailto:you@example.com">Email</a></li>
+    <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
+    <li><a href="https://github.com/your-username">GitHub</a></li>
+    <li><a href="resume.pdf">Résumé (PDF)</a></li>
+  </ul>
+
+  <svg class="trend" viewBox="0 0 720 70" preserveAspectRatio="none" aria-hidden="true">
+    <path class="base" d="M0 69 H720"/>
+    <path class="line" d="M0 58 L48 54 L96 57 L144 48 L192 50 L240 41 L288 44 L336 36 L384 39 L432 30 L480 33 L528 24 L576 26 L624 17 L672 19 L714 10"/>
+    <circle cx="714" cy="10" r="4"/>
+  </svg>
+</header>
+
+<main class="wrap">
+
+  <section id="experience" aria-labelledby="h-exp">
+    <h2 id="h-exp">Experience</h2>
+
+    <div class="entry">
+      <div class="when">Starting July 2027</div>
+      <div>
+        <h3>Early Career Analyst, Finance <span class="tag">Incoming</span></h3>
+        <p class="org">Invesco · Americas FP&amp;A · Atlanta</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">Summer 2026</div>
+      <div>
+        <h3>Financial Planning &amp; Analysis Intern</h3>
+        <p class="org">Invesco · Atlanta</p>
+        <ul>
+          <li>Owned a weekly market trends briefing for the Americas FP&amp;A team covering rates, global indices, U.S. sectors, commodities, and FX; presented it to a wider finance audience.</li>
+          <li>Automated the briefing's build, cutting preparation time from a full day to about an hour.</li>
+          <li>Built a 2027 third-party fee forecast across the product lineup.</li>
+          <li>Classified roughly 6,000 funds by asset class and strategy to support competitive analysis.</li>
+          <li>Wrote a Python workflow that derives ETF fund flows from NAV and shares-outstanding data and delivers an automated email brief.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDIT: fill in firm name, title, and dates, or delete this block -->
+    <div class="entry">
+      <div class="when">Dates</div>
+      <div>
+        <h3>Wealth Management Intern</h3>
+        <p class="org">Firm name · City</p>
+        <ul>
+          <li>One line on what you did and what it led to.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDIT: fill in role and organization in Santiago, or delete this block -->
+    <div class="entry">
+      <div class="when">Summer</div>
+      <div>
+        <h3>Your role</h3>
+        <p class="org">Organization · Santiago, Chile</p>
+        <ul>
+          <li>Worked in a Spanish-speaking environment. Add one concrete result.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="h-proj">
+    <h2 id="h-proj">Selected projects</h2>
+
+    <div class="entry">
+      <div class="when">Fall 2026</div>
+      <div>
+        <h3>Does NIL spending buy wins? <span class="tag">In progress</span></h3>
+        <p class="org">MSBA Business Intelligence, team project</p>
+        <p>Merging college football performance data with NIL spending data to test whether money translates into results on the field. I own the model and results.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2026</div>
+      <div>
+        <h3>Customer retention KPIs for an airport parking operator</h3>
+        <p class="org">MSBA case study</p>
+        <p>Designed KPIs and BI requirements to help an off-airport parking company keep its highest-value customers.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2025</div>
+      <div>
+        <h3>Constellation Energy (CEG) stock pitch</h3>
+        <p class="org">Independent</p>
+        <p>Built a full pitch package: one-page thesis, comparable companies analysis, and a spoken pitch.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2025</div>
+      <div>
+        <h3>Monster Energy market entry: Portugal and Croatia</h3>
+        <p class="org">International business coursework</p>
+        <p>Analyzed foreign direct investment conditions and entry modes for two European markets, and recommended a market share strategy for Portugal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="h-edu">
+    <h2 id="h-edu">Education</h2>
+
+    <div class="entry">
+      <div class="when">2026 – 2027</div>
+      <div>
+        <h3>M.S. Business Analytics</h3>
+        <p class="org">University of Georgia, Terry College of Business</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">2023 – 2026</div>
+      <div>
+        <h3>B.B.A. Finance and International Business</h3>
+        <p class="org">University of Georgia, Terry College of Business</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="h-skills">
+    <h2 id="h-skills">Tools and skills</h2>
+    <dl class="skills">
+      <dt>Finance</dt>
+      <dd>Financial modeling, forecasting, FP&amp;A reporting, comparable companies analysis</dd>
+      <dt>Data</dt>
+      <dd>Excel, Python (pandas, yfinance), SQL and BigQuery, R, Tableau, Bloomberg</dd>
+      <dt>Licenses</dt>
+      <dd>FINRA Securities Industry Essentials (SIE)</dd>
+      <dt>Languages</dt>
+      <dd>English, Spanish, Polish; learning Russian</dd>
+    </dl>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="h-contact">
+    <h2 id="h-contact">Contact</h2>
+    <p>I'm always glad to talk about FP&amp;A, analytics, or anything finance. The fastest way to reach me is email.</p>
+    <p><a href="mailto:you@example.com">you@example.com</a></p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  © <span id="yr">2026</span> Bennett Balthasar
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
